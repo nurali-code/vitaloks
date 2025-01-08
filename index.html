@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./css/style.css?ver-13">
 </head>
 
-<body>
+<body id="home">
 	<header class="header">
 		<div class="header-top">
 			<div class="container">
@@ -129,12 +129,12 @@
 
 		<nav class="header-nav">
 			<div class="container">
-				<a href="#" class="header-nav__link">Главная</a>
+				<a href="#home" class="header-nav__link">Главная</a>
 				<a href="#" class="header-nav__link">Активные компоненты</a>
 				<a href="#" class="header-nav__link">Результаты исследований</a>
 				<a href="#" class="header-nav__link">Отзывы</a>
-				<a href="#" class="header-nav__link">О мастер-классе</a>
-				<a href="#" class="header-nav__link">Контакты</a>
+				<a href="#masterclass" class="header-nav__link">О мастер-классе</a>
+				<a href="#contacts" class="header-nav__link">Контакты</a>
 			</div>
 		</nav>
 	</header>
@@ -215,7 +215,7 @@
 		</div>
 	</main>
 
-	<section class="components bg-brown">
+	<section id="components" class="components bg-brown">
 		<div class="container">
 			<h2>Активные компоненты</h2>
 			<div class="wrap">
@@ -246,7 +246,31 @@
 		</div>
 	</section>
 
-	<section class="contacts">
+	<section class="masterclass" id="masterclass">
+		<div class="container">
+			<h2>Регистрация на мастер-класс</h2>
+			<p class="masterclass__descr">Вы хоть раз задавали себе такие вопросы?</p>
+			<ul class="wrap">
+				<li>Какие витамины и минералы необходимы для здоровья волос?</li>
+				<li>Как часто нужно использовать средства для укрепления волос?</li>
+				<li>Могут ли стресс и плохое питание влиять на здоровье волос?</li>
+				<li>Какие натуральные масла лучше всего подходят для укрепления волос?</li>
+				<li>Как влияет частое окрашивание на здоровье волос?</li>
+				<li>Как правильно ухаживать за волосами в зимний период?</li>
+				<li>Как правильно использовать термоустойчивые инструменты, чтобы минимизировать повреждения?</li>
+				<li>На что обратить внимание, чтобы понять, что волосы стали ослабленными и нуждаются в дополнительном
+					уходе?</li>
+			</ul>
+		</div>
+
+		<picture>
+			<source media="(min-width: 993px)" srcset="img/mastercalss.jpg">
+			<source media="(min-width: 731px)" srcset="img/mastercalss-tablet.jpg">
+			<img src="img/mastercalss-mob.jpg" class="masterclass__bg" loading="lazy" alt="i">
+		</picture>
+	</section>
+
+	<section class="contacts" id="contacts">
 		<div class="container">
 			<h2>Наши контакты</h2>
 			<div class="wrap">
@@ -266,7 +290,8 @@
 					</p>
 				</div>
 				<div class="map">
-					<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa0035135edf2ae4f28aaa2fb37e97b38fc94f40294502e08d6105f49bd815f28&amp;source=constructor"></iframe>
+					<iframe
+						src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa0035135edf2ae4f28aaa2fb37e97b38fc94f40294502e08d6105f49bd815f28&amp;source=constructor"></iframe>
 				</div>
 			</div>
 		</div>
