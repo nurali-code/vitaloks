@@ -1,0 +1,201 @@
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+	border: none
+	outline: none
+
+html
+	scroll-behavior: smooth
+
+:root
+	--prime: #458E48
+	--white: #FFFFFF
+	--balck: #000000
+	--brown-bg: #F6F2E8
+	--prime-bg: #F7FCFA
+	--prime-dark-bg: #DBF2EC
+
+$prime: var(--prime)
+$black: var(--balck)
+$white: var(--white)
+$brown-bg: var(--brown-bg)
+$prime-bg: var(--prime-bg)
+$prime-dark-bg: var(--prime-dark-bg)
+
+body
+	color: $black
+	background-color: $prime-bg
+	font-family: "Montserrat", sans-serif
+	&.is_active
+		overflow: hidden
+
+.container
+	max-width: 1360px
+	width: 100%
+	margin: 0 auto
+	padding: 0 15px
+
+img
+	display: block
+	max-width: 100%
+
+h2
+	font-size: 35px
+	font-weight: 600
+	line-height: 42.67px
+	margin: 0 0 30px
+
+a,
+button
+	color: $black
+	text-decoration: none
+	transition: all ease .3s
+	background-color: transparent
+	&:hover
+		opacity: .6
+		img
+			filter: none !important
+			opacity: 1 !important
+
+	&:active
+		opacity: 1
+		transform: scale(.98)
+
+.btn
+	font-weight: 600
+	font-size: 20px
+	line-height: 100%
+	display: block
+	width: fit-content
+	padding: 20px 30px
+	border-radius: 20px
+	border: 2px solid $prime
+	color: white
+	background-color: $prime
+	svg
+		margin: 0
+
+	&:hover
+		opacity: 1
+		background-color: $prime-bg
+
+	&.--outline
+		border-color: $black
+		background-color: $prime-bg
+		color: $black
+		&:hover
+			background-color: $black
+			color: $white
+
+ul, ol
+	padding-left: 25px
+
+.fx, .fx-w, .fx-ac, .fx-as, .fx-col, .fx-jb, .fx-a
+	display: flex
+
+.fx
+	&-ac
+		align-items: center
+	&-jc
+		justify-content: center
+	&-col
+		flex-direction: column
+	&-w
+		flex-wrap: wrap
+
+	&-as
+		align-items: flex-start
+
+	&-jb
+		justify-content: space-between
+
+	&-ae
+		align-items: end
+
+section
+	padding: 40px 0
+	&.bg-brown
+		margin: 20px 0
+		background-color: $brown-bg
+
+input
+	border: 1px solid $prime
+	height: 54px
+	width: 100%
+	font-weight: normal
+	padding: 0 16px
+	background-color: $prime-bg
+	margin: 0 0 24px
+	color: $black
+	&::placeholder
+		color: #9C9C9C
+	&:focus
+		border-color: $prime
+
+li
+	margin-bottom: 5px
+	&:last-child
+		margin-bottom: 0
+
+.amount
+	display: flex
+	justify-content: center
+	align-items: center
+	input
+		border: none
+		width: 69px
+		text-align: center
+		height: 50px
+		margin: 0
+		padding: 0
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
+			appearance: none
+			margin: 0
+
+	button
+		width: 50px
+		height: 50px
+		font-weight: 600
+		font-size: 25px
+		border-radius: 50%
+		text-align: center
+		background: #E1EAE8
+		&:hover,
+		&:active
+			opacity: 1
+			background: #737776
+
+@media screen and ( max-width: 992px )
+	h2
+		font-size: 20px
+		line-height: 24.38px
+
+	.amount
+		button
+			width: 35px
+			height: 35px
+			font-size: 16px
+
+		input
+			width: 38px
+			height: 35px
+
+	.btn
+		padding: 12px 20px
+		font-size: 14px
+
+@media screen and ( max-width: 730px )
+	h2
+		font-size: 18px
+		line-height: 21.94px
+		margin-bottom: 20px
+
+	section
+		padding: 25px 0
+		&.bg-brown
+			margin: 10px 0
+
+	.btn
+		padding: 9px 15px
