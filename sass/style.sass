@@ -71,15 +71,17 @@
 		&__btn
 			display: none
 
-		&:not(.active)
-			display: none
-
 	&-information
 		margin-bottom: 40px
 		ol, ul, p
 			font-weight: 500
 			font-size: 20px
 			line-height: 24px
+
+		&:not(.active)
+			display: none
+			.main-info
+				display: none
 
 	&-footer
 		justify-content: space-between
@@ -145,8 +147,6 @@
 				background-position: center left
 				background-image: url('../img/arr.svg')
 				margin: 0 0 8px
-				&.active
-					border-color: $prime
 
 		&__subheading
 			margin-bottom: 10px
@@ -155,6 +155,11 @@
 
 		&-information
 			margin: 0
+			display: block !important
+			&.active
+				.main-info
+					&__btn
+						border-color: $prime
 
 		&-footer
 			padding: 15px 5px 0
@@ -246,8 +251,201 @@
 				width: 60%
 				margin: 0 auto 20px
 
+.resolts
+	.wrap
+		display: flex
+		gap: 30px
+		align-items: center
+
+	&__img
+		width: 37%
+		box-shadow: 0px 4px 4px 0px #00000040
+		border-radius: 20px
+		object-fit: cover
+		object-position: center right
+
+	.title
+		width: calc( 100% - 37% - 30px)
+		p, ul
+			font-size: 24px
+			line-height: 29.26px
+			font-weight: 500
+			padding-bottom: 5px
+
+		ul
+			margin-bottom: 47px
+
+		h3
+			font-size: 24px
+			line-height: 29.26px
+			text-decoration: underline
+			text-decoration-color: $prime
+			text-underline-position: from-font
+			text-decoration-skip-ink: none
+			margin-bottom: 32px
+
+	.item
+		font-weight: 500
+		font-size: 20px
+
+	.items
+		display: flex
+		text-align: center
+		flex-wrap: wrap
+		align-items: flex-end
+		justify-content: space-between
+		img
+			display: block
+			width: 135px
+			height: 144px
+			object-fit: contain
+			object-position: center bottom
+			margin: 0 auto 55px
+
+	@media screen and ( max-width: 992px )
+		.wrap
+			align-items: stretch
+			gap: 20px
+
+		&__img
+			width: 32%
+
+		.title
+			width: calc( 100% - 32% - 20px)
+
+			p,ul
+				font-size: 14px
+				line-height: 19px
+
+			ul
+				margin-bottom: 13px
+
+			h3
+				font-size: 16px
+				line-height: 19.5px
+				margin-bottom: 30px
+
+		.items
+			img
+				width: 63px
+				height: 76px
+				margin-bottom: 15px
+		.item
+			font-size: 12px
+			line-height: 14.63px
+
+	@media screen and ( max-width: 730px )
+		.wrap
+			display: block
+		&__img
+			width: 75%
+			margin: 0 auto 20px
+		.title
+			width: 100%
+			h3
+				margin-bottom: 14px
+
+		.item
+			font-size: 8px
+			line-height: 10px
+			img
+				width: 40.37px
+				height: 54.12px
+
+.reviews
+	.wrap
+		overflow-x: scroll
+		display: flex
+		margin-top: 40px
+		gap: 22px
+		padding-bottom: 20px
+
+	h2
+		margin-bottom: 20px
+		.arr
+			margin-left: 5px
+
+	p
+		font-size: 22px
+		font-weight: 500
+		line-height: 26.82px
+
+	h3
+		font-size: 22px
+		font-weight: 500
+		line-height: 26.82px
+		text-underline-position: from-font
+		text-decoration-skip-ink: none
+		text-decoration: underline
+		text-decoration-color: $prime
+		margin-bottom: 26px
+
+	.item
+		min-width: 553px
+		width: 553px
+		padding: 30px 40px
+		border: 2px solid $black
+		border-radius: 20px
+		background-color: $prime-bg
+		&__img
+			width: 110px
+			height: 110px
+			border-radius: 50%
+			display: block
+
+		&__name
+			margin-bottom: 15px
+
+		&-head
+			display: flex
+			align-items: center
+			gap: 20px
+			border-bottom: 2px solid $prime
+			padding-bottom: 17px
+			margin-bottom: 14px
+
+	@media screen and ( max-width: 992px )
+		p
+			font-size: 14px
+			line-height: 17.07px
+
+		.wrap
+			gap: 12px
+			margin-top: 12px
+			width: 100vw
+			position: relative
+			left: -15px
+			padding: 0 15px 15px
+
+		h2
+			margin-bottom: 8px
+
+		h3
+			font-size: 16px
+			line-height: 20px
+			margin-bottom: 18px
+
+		.item
+			padding: 22px 25px
+			width: 290px
+			min-width: 290px
+			&__img
+				height: 58px
+				width: 58px
+
+			&__stars
+				max-width: 150px
+
+			&__name
+				margin-bottom: 10px
+
+			&-head
+				padding-bottom: 10px
+				margin-bottom: 15px
+
 .masterclass
 	position: relative
+	margin-top: 0 !important
 	z-index: 1
 	&__descr
 		font-size: 26px
@@ -280,7 +478,7 @@
 			&:last-child
 				width: calc( 50% - 10px )
 
-	&__bg 
+	&__bg
 		position: absolute
 		top: 0
 		left: 0
@@ -291,7 +489,7 @@
 	@media screen and ( max-width: 992px )
 		h2
 			margin-bottom: 22px
-		
+
 		&__descr
 			font-size: 16px
 			line-height: 19.5px
@@ -331,3 +529,85 @@
 				&:nth-child(7),
 				&:last-child
 					width: 100%
+
+.register
+	margin-top: 0 !important
+	h2
+		font-size: 26px
+		text-decoration: underline
+		text-decoration-color: $prime
+		text-underline-position: from-font
+		text-decoration-skip-ink: none
+
+	.box
+		display: flex
+		align-items: center
+		padding: 40px 30px
+		border-radius: 20px
+		border: 2px solid $black
+		background-color: $white
+		margin-bottom: 20px
+		gap: 24px
+		h3
+			font-size: 30px
+			font-weight: 600
+			line-height: 36.57px
+			margin: 0 0 38px
+
+	&__img
+		border-radius: 20px
+		object-fit: cover
+		box-shadow: 0px 4px 4px 0px #00000040
+		width: 34%
+
+	.title
+		width: calc( 100% - 34% - 24px )
+
+	input
+		border-width: 2px
+		border-radius: 20px
+		height: 60px
+		background-color: $white
+		margin-bottom: 26px
+
+	@media screen and ( max-width: 992px )
+		h2
+			font-size: 16px
+			margin-bottom: 24px
+		input
+			height: 44px
+			margin-bottom: 22px
+
+		.box
+			padding: 25px 20px
+			h3
+				font-size: 16px
+				line-height: 19.5px
+				margin-bottom: 24px
+
+	@media screen and ( max-width: 730px )
+		input
+			height: 32px
+			border-width: 1px
+			font-size: 12px
+			margin-bottom: 15px
+
+		.box
+			padding: 20px 15px
+			align-items: stretch
+			gap: 0
+			justify-content: space-between
+			margin-bottom: 0
+			h3
+				margin-bottom: 13px
+
+		.title
+			width: 50%
+
+		&__img
+			width: 46%
+			object-position: top right
+
+		.btn
+			font-size: 12px
+			padding: 9px
