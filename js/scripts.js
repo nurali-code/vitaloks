@@ -35,3 +35,10 @@ document.querySelectorAll(".main-tabs__btn, .main-info__btn").forEach(button => 
 		}
 	});
 });
+
+document.querySelectorAll("#infos li").forEach(button => {
+	button.addEventListener("click", () => {
+		document.querySelectorAll("#infos li").forEach(el => el.classList.remove("active"));
+		button.classList.add('active');
+	});
+});
